@@ -1,0 +1,9 @@
+\beamer@sectionintoc {2}{\textbf {\textcolor {purple}{Introduction}}}{2}{0}{1}
+\beamer@sectionintoc {3}{\textbf {\textcolor {purple}{Problem Setup and Notation}}}{5}{0}{2}
+\beamer@sectionintoc {4}{\textbf {\textcolor {purple}{Stochastic Mirror Descent (SMD)}}}{8}{0}{3}
+\beamer@sectionintoc {5}{\textbf {\textcolor {purple}{Implicit Bias: The Linear Case}}}{11}{0}{4}
+\beamer@sectionintoc {6}{Assumptions for Nonlinear Analysis}{12}{0}{5}
+\beamer@sectionintoc {7}{Main Theoretical Results}{14}{0}{6}
+\beamer@sectionintoc {8}{The Fundamental Identity of SMD}{16}{0}{7}
+\beamer@sectionintoc {9}{The Fundamental Identity of SMD}{17}{0}{8}
+\beamer@sectionintoc {10}{Summary of Contributions}{18}{0}{9}
