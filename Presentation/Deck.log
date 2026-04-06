@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.9.5)  5 APR 2026 17:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.9.5)  6 APR 2026 17:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1169,55 +1169,50 @@ Package: beamerinnerthemeoxonian
 (beamerouterthemeoxonian.sty
 Package: beamerouterthemeoxonian 
 ))
+(C:\Users\chait\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
+Package: colortbl 2024/10/29 v1.0k Color table columns (DPC)
+\everycr=\toks55
+\minrowclearance=\skip73
+\rownum=\count424
+)
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\newline' on input line 32.
+(hyperref)                removing `\newline' on input line 35.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\newline' on input line 32.
+(hyperref)                removing `\newline' on input line 35.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\new@ifnextchar' on input line 32.
-
-
-! LaTeX Error: Two \documentclass or \documentstyle commands.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.38 \documentclass{
-                    beamer}
-The document may only declare one class.
+(hyperref)                removing `\new@ifnextchar' on input line 35.
 
 
 (C:\Users\chait\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count424
+\l__color_backend_stack_int=\count425
 ) (Deck.aux)
 \openout1 = `Deck.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1257,17 +1252,17 @@ LaTeX Font Info:    ... okay on input line 48.
 (C:\Users\chait\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count425
+\scratchcounter=\count426
 \scratchdimen=\dimen368
 \scratchbox=\box137
-\nofMPsegments=\count426
-\nofMParguments=\count427
-\everyMPshowfont=\toks55
-\MPscratchCnt=\count428
+\nofMPsegments=\count427
+\nofMParguments=\count428
+\everyMPshowfont=\toks56
+\MPscratchCnt=\count429
 \MPscratchDim=\dimen369
-\MPnumerator=\count429
-\makeMPintoPDFobject=\count430
-\everyMPtoPDFconversion=\toks56
+\MPnumerator=\count430
+\makeMPintoPDFobject=\count431
+\everyMPtoPDFconversion=\toks57
 )
 (C:\Users\chait\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
 ase.sty
@@ -1279,7 +1274,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 48.
+Package hyperref Info: Link coloring OFF on input line 42.
  (Deck.out) (Deck.out)
 \@outlinefile=\write5
 \openout5 = `Deck.out'.
@@ -1309,48 +1304,65 @@ Dictionary: translator-numbers-dictionary, Language: English
 heorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-\c@lstlisting=\count431
+\c@lstlisting=\count432
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
  (Deck.nav)
-<Theme/Logos/footerlogo.png, id=52, 1213.53375pt x 416.55624pt>
+<Theme/Logos/footerlogo.png, id=76, 1213.53375pt x 416.55624pt>
 File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 48.
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 42.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
-File: Theme/Logos/footerlogo.png Graphic file (type png)
-<use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 56.
-(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
- (Deck.toc)
+<Theme/Logos/cminds_iitb_logo.png, id=78, 557.6835pt x 184.7703pt>
+File: Theme/Logos/cminds_iitb_logo.png Graphic file (type png)
+<use Theme/Logos/cminds_iitb_logo.png>
+Package pdftex.def Info: Theme/Logos/cminds_iitb_logo.png  used on input line 4
+5.
+(pdftex.def)             Requested size: 142.26378pt x 47.13412pt.
 
-File: Theme/Logos/footerlogo.png Graphic file (type png)
-<use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 56.
-(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+
 [1
 
 {C:/Users/chait/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./Theme/Logo
-s/footerlogo.png>]
+s/cminds_iitb_logo.png>]
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 51.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+\openout4 = `Deck.vrb'.
+
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 56.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+ (Deck.vrb (Deck.toc))
+
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 56.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+[2
+
+ <./Theme/Logos/footerlogo.png>]
 File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
 Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 70.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 
 
-[2
+[3
 
 ]
 File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 88.
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 91.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 88.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 91.
 
  (C:\Users\chait\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 88.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 91.
 
 
 (C:\Users\chait\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -1359,196 +1371,512 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 88.
-(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
-[3
-
-]
-File: Theme/Logos/footerlogo.png Graphic file (type png)
-<use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 100.
-(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
-
-
-File: Theme/Logos/footerlogo.png Graphic file (type png)
-<use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 100.
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 91.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 [4
 
 ]
 File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 114.
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 128.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 
 
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 128.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 [5
 
 ]
 File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 137.
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 147.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 
 
 File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 137.
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 147.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 [6
 
 ]
 File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 158.
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 170.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 
 
 File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 158.
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 170.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 [7
 
 ]
 File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 172.
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 198.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 
 
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 198.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 [8
 
 ]
 File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 192.
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 212.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 
 
-File: Theme/Logos/footerlogo.png Graphic file (type png)
-<use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 192.
-(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 [9
 
 ]
 File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 214.
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 235.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 
 
 File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 214.
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 235.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 [10
 
 ]
 File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 238.
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 256.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 
 
 File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 238.
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 256.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 [11
 
 ]
 File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 258.
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 270.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 
 
-File: Theme/Logos/footerlogo.png Graphic file (type png)
-<use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 258.
-(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 [12
 
 ]
 File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 273.
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 292.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 
 
 File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 273.
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 292.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 [13
 
 ]
 File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 290.
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 314.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 
 
 File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 290.
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 314.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 [14
 
 ]
 File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 304.
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 339.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 
 
 File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 304.
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 339.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 [15
 
 ]
 File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 323.
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 355.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 
 
-File: Theme/Logos/footerlogo.png Graphic file (type png)
-<use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 323.
-(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 [16
 
 ]
 File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 342.
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 374.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 
 
 File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 342.
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 374.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 [17
 
 ]
 File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 356.
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 385.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 
 
 File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
-Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 356.
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 385.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 [18
+
+]
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 400.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+
+
+[19
+
+]
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 415.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+
+
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 415.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+[20
+
+]
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 431.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+
+
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 431.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+[21
+
+]
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 448.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+
+
+[22
+
+]
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 466.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+
+
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 466.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+[23
+
+]
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 485.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+
+
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 485.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+[24
+
+]
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 506.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+
+Overfull \hbox (3.4409pt too wide) detected at line 506
+\OML/cmm/m/it/10.95 ^^Q\OMS/cmsy/m/n/10.95 r\OML/cmm/m/it/10.95 L[]\OT1/cmr/m/n
+/10.95 (\OML/cmm/m/it/10.95 w[]\OT1/cmr/m/n/10.95 )[](\OML/cmm/m/it/10.95 w \OM
+S/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 w[]\OT1/cmr/m/n/10.95 ) = \OMS/cmsy/m/
+n/10.95 ^^@\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 L[]\OT1/cmr/m/n/10.95 (\OML/
+cmm/m/it/10.95 w[]\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10
+.95 L[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 w[]\OT1/cmr/m/n/10.95 ) \OMS/cms
+y/m/n/10.95 ^^@ r\OML/cmm/m/it/10.95 L[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95
+ w[]\OT1/cmr/m/n/10.95 )[](\OML/cmm/m/it/10.95 w[] \OMS/cmsy/m/n/10.95 ^^@ \OML
+/cmm/m/it/10.95 w[]\OT1/cmr/m/n/10.95 )] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/
+10.95 ^^QD[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 w; w[]\OT1/cmr/m/n/10.95 )
+ []
+
+
+
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 506.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+[25
+
+]
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 523.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+
+
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 523.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+[26
+
+]
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 539.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+
+
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 539.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+[27
+
+]
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 560.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+
+
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 560.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+[28
+
+]
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 576.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+
+
+[29
+
+]
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 593.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+
+
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 593.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+[30
+
+]
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 611.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+
+
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 611.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+[31
+
+]
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 620.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+
+
+LaTeX Warning: File `../Demo/figure_mnist_distances.png' not found on input lin
+e 620.
+
+
+! Package pdftex.def Error: File `../Demo/figure_mnist_distances.png' not found
+: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.620 \end{frame}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \vbox (183.4283pt too high) detected at line 620
+ []
+
+
+
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 620.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+[32
+
+]
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 629.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+
+
+LaTeX Warning: File `../Demo/figure_cifar_distances.png' not found on input lin
+e 629.
+
+
+! Package pdftex.def Error: File `../Demo/figure_cifar_distances.png' not found
+: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.629 \end{frame}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \vbox (185.55746pt too high) detected at line 629
+ []
+
+
+
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 629.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+[33
+
+]
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 638.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+
+
+LaTeX Warning: File `../Demo/figure_weight_distributions.png' not found on inpu
+t line 638.
+
+
+! Package pdftex.def Error: File `../Demo/figure_weight_distributions.png' not 
+found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.638 \end{frame}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \vbox (164.02702pt too high) detected at line 638
+ []
+
+
+
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 638.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+[34
+
+]
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 655.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+
+
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 655.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+[35
+
+]
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 671.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+
+
+[36
+
+]
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 684.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+
+
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 684.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+[37
+
+]
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 701.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+
+
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 701.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+[38
+
+]
+File: Theme/Logos/footerlogo.png Graphic file (type png)
+<use Theme/Logos/footerlogo.png>
+Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 715.
+(pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+
+
+[39
 
 ]
 \tf@nav=\write6
@@ -1565,37 +1893,49 @@ Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 356.
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-08-13>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `Deck.out' has not changed.
-(rerunfilecheck)             Checksum: 5F816487819637CC7DED962393CC8708;1763.
+(rerunfilecheck)             Checksum: 2E10310583172B5C08C5393E4B1BC8E2;3113.
  ) 
 Here is how much of TeX's memory you used:
- 32727 strings out of 468133
- 648161 string characters out of 5430713
- 1188907 words of memory out of 5000000
- 60669 multiletter control sequences out of 15000+600000
- 635170 words of font info for 71 fonts, out of 8000000 for 9000
+ 33251 strings out of 468133
+ 659769 string characters out of 5430713
+ 1192907 words of memory out of 5000000
+ 61132 multiletter control sequences out of 15000+600000
+ 639511 words of font info for 89 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,16n,123p,407b,934s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/chait/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmbx10.pfb><C:/Users/chait/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmbx12.pfb><C:/Users/chait/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmex10.pfb><C:/Users/chait/AppData/Local/Programs/MiKTeX/font
-s/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/chait/AppData/Local/Programs/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/chait/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/chait/AppData/
-Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/chait/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/User
-s/chait/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+ublic/amsfonts/cm/cmbx6.pfb><C:/Users/chait/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/chait/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/chait/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/chait/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/chait/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/User
+s/chait/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb>
 <C:/Users/chait/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-r8.pfb><C:/Users/chait/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
-s/cm/cmsy10.pfb><C:/Users/chait/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmsy8.pfb><C:/Users/chait/AppData/Local/Programs/MiKTeX/fonts/typ
-e1/public/amsfonts/cm/cmti10.pfb><C:/Users/chait/AppData/Local/Programs/MiKTeX/
-fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/chait/AppData/Local/Pr
-ograms/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Deck.pdf (18 pages, 375941 bytes).
+mi8.pfb><C:/Users/chait/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb><C:/Users/chait/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmr12.pfb><C:/Users/chait/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmr6.pfb><C:/Users/chait/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/chait/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/chait/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/chait/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/chait/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/
+chait/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><
+C:/Users/chait/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmt
+t10.pfb><C:/Users/chait/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/symbols/msam10.pfb><C:/Users/chait/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/amsfonts/symbols/msbm10.pfb>
+Output written on Deck.pdf (39 pages, 606772 bytes).
 PDF statistics:
- 250 PDF objects out of 1000 (max. 8388607)
- 47 named destinations out of 1000 (max. 500000)
- 128 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 432 PDF objects out of 1000 (max. 8388607)
+ 95 named destinations out of 1000 (max. 500000)
+ 181 words of extra memory for PDF output out of 10000 (max. 10000000)
 

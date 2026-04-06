@@ -12,6 +12,9 @@
 \input{Theme/Packages.tex}
 \usetheme{oxonian}
 \usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{graphicx}
 \definecolor{cmindsblue}{HTML}{1E4483}
 % Footline colors
 \setbeamercolor{footline}{fg=white,bg=cmindsblue}
@@ -35,24 +38,21 @@
 
 \date{\tiny April 06, 2026} %\today
 
-\documentclass{beamer}
-\usepackage[utf8]{inputenc}
-\usepackage{xcolor}
-
-% Color Definitions (Matching your theme)
-\definecolor{cmindsblue}{RGB}{0, 102, 204}
-\definecolor{oxfordblue}{RGB}{0, 33, 71}
-\definecolor{purple}{RGB}{128, 0, 128}
-\definecolor{teal}{RGB}{0, 128, 128}
 
 \begin{document}
+
+{\setbeamertemplate{footline}{} 
+\frame{\titlepage}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Outline
 \section*{Outline}
-\begin{frame}
+\begin{frame}[fragile]
     {\textcolor{cmindsblue}{\textbf{Presentation Outline}}}
-    \tableofcontents
+    \vspace{-0.2cm}
+    {\tiny
+    \tableofcontents[hideallsubsections, subsubsectionstyle=hide]
+    }
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -70,33 +70,131 @@
 \end{frame}
 
 %---------------------------------------
-% Slide: Background and Motivation
+% Slide: The Deep Learning Boom
 %---------------------------------------
-\begin{frame}{\textcolor{cmindsblue}{\textbf{Background and Motivation}}}
+\begin{frame}{\textcolor{cmindsblue}{\textbf{The Rise of Deep Learning}}}
     \vspace{-0.5cm}
-    \begin{block}{\textbf{\textcolor{teal}{Optimization without deep learning}}}
+    \begin{block}{\textbf{\textcolor{teal}{The 2012 Moment}}}
         \begin{itemize}
-            \item The revolutionary paper, \textit{Problem Complexity and Method Efficiency in Optimization}, is published in 1983. 
+            \item AlexNet wins ImageNet 2012 by a ~10\% margin over second place — the moment the field took notice
         \end{itemize}
-    \end{block} % Fixed missing end block here
+    \end{block}
     
-    \begin{block}{\textbf{\textcolor{teal}{The Multiplicative Revolution}}}
+    \begin{block}{\textbf{\textcolor{teal}{What Made It Work?}}}
         \begin{itemize}
-            \item Another revolutionary paper, \textit{The Exponentiation Gradient Descent Algorithm} by J. Kivinen and M. Warmuth, is published in 1997.
+            \item Massive overparameterization ($p \gg n$), SGD training, and empirical regularization techniques (dropout, batch norm)
         \end{itemize}
+    \end{block}
+    
+    \vspace{0.2cm}
+    \textit{But this raised a puzzle: classical learning theory predicted catastrophic overfitting.}
+\end{frame}
+
+%---------------------------------------
+% Slide: Zhang et al. Experiment
+%---------------------------------------
+\begin{frame}{\textcolor{cmindsblue}{\textbf{The Generalization Mystery: Zhang et al. (2017)}}}
+    \vspace{-0.3cm}
+    \textbf{Same architecture, same optimizer, same hyperparameters. Only the labels changed:}
+    \vspace{0.2cm}
+    
+    \begin{table}
+    \centering
+    \small
+    \begin{tabular}{llcc}
+    \toprule
+    \textbf{Model} & \textbf{Condition} & \textbf{Train Acc.} & \textbf{Test Acc.} \\
+    \midrule
+    Inception & True labels        & 100\% & $\sim$87\% \\
+    \rowcolor{orange!15}
+    Inception & Random labels      & 100\% & $\sim$10\% \\
+    \rowcolor{orange!15}
+    Inception & Random pixels      & 100\% & $\sim$10\% \\
+    \midrule
+    AlexNet   & True labels        & 100\% & $\sim$80\% \\
+    \rowcolor{orange!15}
+    AlexNet   & Random labels      & 100\% & $\sim$10\% \\
+    \midrule
+    MLP       & True labels        & 100\% & $\sim$53\% \\
+    \rowcolor{orange!15}
+    MLP       & Random labels      & 100\% & $\sim$10\% \\
+    \bottomrule
+    \end{tabular}
+    \caption*{\footnotesize CIFAR-10. Zhang et al., ICLR 2017.}
+    \end{table}
+    
+    \vspace{0.1cm}
+    \textbf{Model, size, optimizer, regularizer are identical across rows. Only labels differ. None of these explain generalization.}
+\end{frame}
+
+%---------------------------------------
+% Slide: Classical Theory Fails
+%---------------------------------------
+\begin{frame}{\textcolor{cmindsblue}{\textbf{Classical Theory Cannot Explain This}}}
+    \vspace{-0.3cm}
+    \begin{block}{\textbf{\textcolor{teal}{Classical Generalization Bound}}}
+    $$\text{Test error} \leq \text{Train error} + \underbrace{f(\text{model complexity}, n)}_{\text{complexity penalty}}$$
+    \end{block}
+    
+    \begin{itemize}
+        \item Since networks fit \textit{random} labels, their effective VC dimension / Rademacher complexity is essentially unbounded
+        \item Therefore the complexity penalty is vacuously large — the bound predicts the network \textit{should not} generalize even on true labels
+    \end{itemize}
+    
+    \begin{block}{\textbf{\textcolor{teal}{The Implication}}}
+        Networks memorize noise yet generalize on real data. This contradiction vanishes if the optimizer itself creates the bias.
     \end{block}
 \end{frame}
 
 %---------------------------------------
-% Slide: The conflict
+% Slide: Implicit Bias Hypothesis
 %---------------------------------------
-\begin{frame}{\textcolor{cmindsblue}{\textbf{The Conflict}}}
-    \vspace{-0.5cm}
-    \begin{itemize}
-        \item \textit{Understanding deep learning requires rethinking generalization} (2017) by Zhang et al. is published in ICLR 2017.
-        \item \textbf{The Core Mystery:} Deep neural networks can easily fit random labels, challenging traditional VC-dimension and generalization theories.
-        \item Out of infinite solutions that interpolate the data, why does SGD find the ones that generalize?
-    \end{itemize}
+\begin{frame}{\textcolor{cmindsblue}{\textbf{Implicit Bias: The Optimizer as Regularizer}}}
+    \vspace{-0.3cm}
+    \textbf{Setup:} In the overparameterized regime, the solution set $\mathcal{W}$ is a high-dimensional manifold — infinitely many zero-loss solutions exist.
+    
+    \begin{block}{\textbf{\textcolor{teal}{Known Result (Gunasekar et al., 2018)}}}
+        For linear models, SGD converges to minimum $\ell_2$ norm interpolant by geometry, not explicit constraint.
+    \end{block}
+    
+    \vspace{0.2cm}
+    \textbf{Three open questions that this paper answers:}
+    \begin{enumerate}
+        \item What is the implicit bias for optimizers \textit{beyond} SGD?
+        \item Does this extend to \textit{nonlinear} models like deep networks?
+        \item Can we \textit{deliberately engineer} the implicit bias by choosing the optimizer?
+    \end{enumerate}
+    
+    \vspace{0.2cm}
+    \textit{If (3) is yes, the optimizer is a design choice for generalization.}
+\end{frame}
+
+%---------------------------------------
+% Slide: Mirror Descent Framework
+%---------------------------------------
+\begin{frame}{\textcolor{cmindsblue}{\textbf{A Unified View: Stochastic Mirror Descent}}}
+    \vspace{-0.3cm}
+    \begin{block}{\textbf{\textcolor{teal}{SGD is just one special case}}}
+        SMD generalizes all gradient-based optimizers via a potential function $\psi$
+    \end{block}
+    
+    \vspace{0.2cm}
+    \begin{table}
+    \centering
+    \small
+    \begin{tabular}{lll}
+    \hline
+    \textbf{Potential $\psi(w)$} & \textbf{Algorithm} & \textbf{Implicit Bias} \\
+    \hline
+    $\frac{1}{2}\|w\|_2^2$ & SGD & Min $\ell_2$ norm \\
+    $\sum_j w_j \log w_j$ & Exponentiated Gradient & Sparsity / simplex \\
+    $\frac{1}{p}\|w\|_p^p$ & $p$-norm algorithm & Min $\ell_p$ norm \\
+    \hline
+    \end{tabular}
+    \end{table}
+    
+    \vspace{0.2cm}
+    \textbf{The choice of $\psi$ is the choice of bias. This paper proves which solution SMD finds for any $\psi$ in nonlinear models.}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -152,9 +250,9 @@
         \item For $i > n$, we cycle through the data or select at random.
     \end{itemize}
     \vfill
-    \begin{center}
-        \textit{How does this update rule interact with the geometry of $\mathcal{W}$?}
-    \end{center}
+    \begin{block}{\textbf{\textcolor{teal}{The Implicit Question}}}
+    Among all $w \in \mathcal{W}$, SGD will converge to exactly one. The update rule's geometry — not any explicit constraint — determines which one. This is the implicit bias.
+    \end{block}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -178,17 +276,19 @@
     Instead of updating in the weight space, SMD updates in the \textbf{mirrored domain} via a strictly convex potential function $\psi(\cdot)$.
     
     \begin{block}{The Update Rule}
-        The gradient $\nabla \psi(\cdot)$ defines an invertible map. The recursion is:
         \begin{equation}
             \nabla\psi(w_i) = \nabla\psi(w_{i-1}) - \eta\nabla L_i(w_{i-1})
         \end{equation}
     \end{block}
 
     \begin{itemize}
-        \item \textbf{Intuition:} The update happens in the "dual" space determined by $\nabla\psi$.
-        \item \textbf{Special Case (SGD):} If $\psi(w) = \frac{1}{2}\|w\|^2$, then $\nabla\psi$ is the identity map, and we recover standard SGD.
-        \item \textbf{Choice of Potential:} Different $\psi$ exploit different geometric structures (e.g., sparsity, simplex).
+        \item Updates happen in dual space via $\nabla\psi$
+        \item SGD: $\psi(w) = \frac{1}{2}\|w\|^2$ gives $\nabla\psi = \text{identity}$
+        \item Different $\psi$ encode different geometric biases
     \end{itemize}
+    
+    \vspace{0.2cm}
+    \textit{Every optimizer is mirror descent in disguise.}
 \end{frame}
 
 %---------------------------------------
@@ -208,8 +308,8 @@
     \end{block}
 
     \begin{itemize}
-        \item \textbf{Non-negativity:} $D_\psi(w, \bar{w}) \geq 0$ and $D_\psi(w, \bar{w}) = 0$ iff $w = \bar{w}$.
-        \item \textbf{Distance Metric:} It acts as a "proximity measure" tailored to the geometry of the potential $\psi$.
+        \item Non-negative: $D_\psi(w, \bar{w}) \geq 0$, equals 0 iff $w = \bar{w}$
+        \item Tailored to geometry of $\psi$
     \end{itemize}
 \end{frame}
 
@@ -228,54 +328,76 @@
     \end{block}
 
     \begin{itemize}
-        \item \textbf{The Result:} Out of all infinite solutions in $\mathcal{W}$, SMD picks the one "closest" to the initialization in the Bregman sense.
-        \item \textbf{Corollary (Initialization):} If we initialize at the global minimum of $\psi$, then:
-        \begin{equation}
-            w_\infty = \arg\min_{w \in \mathcal{W}} \psi(w)
-        \end{equation}
-        \item \textbf{Conclusion:} Optimization geometry \textbf{is} the regularizer.
+        \item Out of infinite $\mathcal{W}$ solutions, SMD picks the Bregman-closest to initialization
+        \item If $w_0 = \arg\min_w \psi(w)$, then $w_\infty = \arg\min_{w \in \mathcal{W}} \psi(w)$
+        \item Geometry is the regularizer
     \end{itemize}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Section: Theoretical Assumptions
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Assumptions for Nonlinear Analysis}
-
-\begin{frame}{Assumption 1: Local Solvability and Restricted Convexity}
-    The analysis considers a local region $\mathcal{B} = \{w \in \mathbb{R}^p \mid D_\psi(w, \bar{w}) \leq \epsilon\}$ containing the initialization $w_0$.
     
-    \begin{block}{Condition on the Loss Function}
-        There exists $\bar{w} \in \mathcal{W}$ such that for all $w \in \mathcal{B}$ and $i=1, \dots, n$:
-        \begin{equation}
-            D_{L_i}(\bar{w}, w) = L_i(\bar{w}) - L_i(w) - \nabla L_i(w)^T(\bar{w} - w) \geq 0
-        \end{equation}
+    \begin{block}{\textbf{\textcolor{teal}{Implication}}}
+    First rigorous answer to Zhang et al.: optimizer encodes preference. This is determined by $\psi$ and $w_0$.
     \end{block}
-    \begin{itemize}
-        \item Since $L_i(\bar{w}) = 0$ is a global minimum, this requires the loss to be locally "star-convex" toward the solution $\bar{w}$.
-        \item This assumption is consistent with the behavior of overparameterized models near the interpolating manifold.
-    \end{itemize}
 \end{frame}
 
-\begin{frame}{Assumption 2: Regularity of the Model Function}
-    The convergence proof requires the model $f_i(w)$ to exhibit bounded first and second-order derivatives within the convex hull of $\mathcal{B}$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Section: Assumptions and Theorems
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\textbf{\textcolor{purple}{Nonlinear Analysis: Assumptions and Main Results}}}
+
+\subsection{\textbf{\textcolor{purple}{Key Assumptions}}}
+\begin{frame}[plain]
+    \vfill
+    \centering
+    \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+        \usebeamerfont{title}Assumptions for Nonlinear Models\par%
+        \color{oxfordblue}\noindent\rule{10cm}{1pt}
+    \end{beamercolorbox}
+    \vfill
+\end{frame}
+
+%---------------------------------------
+% Slide: Theoretical Assumptions
+%---------------------------------------
+
+
+\begin{frame}{Assumption 1: Local Star-Convexity}
+    \vspace{-0.3cm}
+    \textbf{Setup:} Define region $\mathcal{B} = \{w \in \mathbb{R}^p \mid D_\psi(w, \bar{w}) \leq \epsilon\}$ containing $w_0$.\vspace{0.15cm}
+    
+    \textbf{Assumption Statement:} There exists $\bar{w} \in \mathcal{W}$ such that
+    $$D_{L_i}(\bar{w}, w) := L_i(\bar{w}) - L_i(w) - \nabla L_i(w)^T(\bar{w} - w) \geq 0$$
+    \vspace{0.15cm}
+    for all $w \in \mathcal{B}$ and $i = 1, \ldots, n$.
+    
+    \textbf{Geometric interpretation:} The loss Bregman divergence is non-negative. This means the region near interpolating solutions exhibits local "star-convexity": curvature points inward toward the solution set.
+    
+    \textbf{Why it's reasonable:} In the overparameterized regime ($p \gg n$), near any solution $\bar{w} \in \mathcal{W}$, the effective loss landscape becomes benign due to the abundance of degrees of freedom.
+\end{frame}
+
+\begin{frame}{Assumption 2: Boundedness}
+    Model $f_i(w)$ has bounded derivatives in $\mathcal{B}$. \vspace{0.2cm}
     
     \begin{itemize}
-        \item \textbf{Gradient Bound:} $\|\nabla f_i(w)\| \leq \gamma$ for all $w \in \text{conv}(\mathcal{B})$.
-        \item \textbf{Hessian Stability:} There exist constants $\alpha$ and $\beta$ such that:
-        \begin{equation}
-            \alpha I \preceq H_{f_i}(w) \preceq \beta I
-        \end{equation}
-        for all $i=1, \dots, n$ and $w \in \text{conv}(\mathcal{B})$.
+        \item Gradient: $\|\nabla f_i(w)\| \leq \gamma$
+        \item Hessian: $\alpha I \preceq H_{f_i}(w) \preceq \beta I$ for constants $\alpha, \beta$
     \end{itemize}
-    \vspace{0.2cm}
-    These bounds ensure that the nonlinearity of $f(\cdot)$ does not lead to divergence under a fixed learning rate $\eta$.
+    
+    These prevent divergence under fixed step size $\eta$.
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Section: Main Theorems
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Main Theoretical Results}
+
+\subsection{\textbf{\textcolor{purple}{Main Convergence and Characterization Results}}}
+\begin{frame}[plain]
+    \vfill
+    \centering
+    \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+        \usebeamerfont{title}Main Theorems\par%
+        \color{oxfordblue}\noindent\rule{10cm}{1pt}
+    \end{beamercolorbox}
+    \vfill
+\end{frame}
 
 \begin{frame}{Theorem 3: Deterministic Convergence}
     Under Assumption 1, and for a step size $\eta$ such that $\psi(\cdot) - \eta L_i(\cdot)$ is strictly convex for all $i$, the following hold for the SMD iterates $\{w_i\}$:
@@ -286,7 +408,10 @@
         \item \textbf{Interpolation:} The limit point is a global minimum, i.e., $w_\infty \in \mathcal{W}$.
     \end{enumerate}
     \vspace{0.3cm}
-    \textbf{Note:} Unlike many deep learning results, this convergence is \textit{deterministic} and does not rely on expectation or high-probability bounds.
+    \textbf{Note:} Deterministic convergence, no high-probability bounds needed.
+    
+    \vspace{0.2cm}
+    \textbf{Key point:} Bregman geometry guarantees convergence independent of model.
 \end{frame}
 
 \begin{frame}{Theorem 4: Characterization of the Limit Point}
@@ -300,13 +425,27 @@
         \end{enumerate}
     \end{block}
     \vspace{0.2cm}
-    If $w_0$ is $O(\epsilon)$ from the manifold $\mathcal{W}$, then $w_\infty$ is $o(\epsilon)$ from $w^*$. This establishes that SMD approximately minimizes the potential $\psi(\cdot)$ even in the nonlinear setting.
+    If $w_0$ is $O(\epsilon)$ from $\mathcal{W}$, then $w_\infty$ is $o(\epsilon)$ from $w^*$.
+    
+    \textbf{Result:} SMD implicitly minimizes $\psi$ over interpolants.
 \end{frame}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Section: Proof Technique
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The Fundamental Identity of SMD}
+\section{\textbf{\textcolor{purple}{Proofs: Bregman Distance Analysis}}}
+
+\subsection{\textbf{\textcolor{purple}{Fundamental Identity and Proof Technique}}}
+\begin{frame}[plain]
+    \vfill
+    \centering
+    \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+        \usebeamerfont{title}Proof Technique: Fundamental Identity\par%
+        \color{oxfordblue}\noindent\rule{10cm}{1pt}
+    \end{beamercolorbox}
+    \vfill
+\end{frame}
 
 \begin{frame}{Lemma 6: A General Identity for SMD}
     The authors derive a fundamental identity that holds for any model $f(\cdot, \cdot)$ and differentiable loss $\ell(\cdot)$. For any $w \in \mathcal{W}$:
@@ -315,44 +454,265 @@
         D_\psi(w, w_{i-1}) = D_\psi(w, w_i) + D_{\psi - \eta L_i}(w_i, w_{i-1}) + \eta L_i(w_i) + \eta D_{L_i}(w, w_{i-1})
     \end{equation}
     
+    \textbf{Algebraic structure:} All three RHS terms are non-negative (by convexity, non-negativity of loss, and star-convexity). This creates a telescoping inequality.
+    
+    \vspace{0.1cm}
+    \textbf{Takeaway:} The Bregman distance to any interpolant is non-increasing, with three dissipative mechanisms:
+    \begin{enumerate}
+        \item Mirror-adjusted divergence shrapes solutions together
+        \item Loss terms vanish as iterates converge
+        \item Bregman loss divergence measures local geometry
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Lemma 6: Proof Derivation}
+    \vspace{-0.25cm}
+    Start with Bregman definition: $D_\psi(w, w_i) = \psi(w) - \psi(w_i) - \nabla\psi(w_i)^T(w - w_i)$.
+    
+    \vspace{0.08cm}
+    Substitute SMD update: $\nabla\psi(w_i) = \nabla\psi(w_{i-1}) - \eta\nabla L_i(w_{i-1})$:
+    $$D_\psi(w, w_i) = \psi(w) - \psi(w_i) - [\nabla\psi(w_{i-1}) - \eta\nabla L_i(w_{i-1})]^T(w-w_i)$$
+    
+    \vspace{0.08cm}
+    Decompose by adding and subtracting $\psi(w_{i-1}) + \nabla\psi(w_{i-1})^T(w-w_{i-1})$:
+    $$D_\psi(w,w_i) = [D_\psi(w,w_{i-1}) - D_\psi(w_i,w_{i-1})] + \eta\nabla L_i(w_{i-1})^T(w-w_i)$$
+    
+    \vspace{0.08cm}
+    Expand $(w-w_i)=(w-w_{i-1})-(w_i-w_{i-1})$ and apply loss Bregman definitions.
+    
+    \vspace{0.08cm}
+    \textbf{Result:} The fundamental identity with telescoping terms.
+\end{frame}
+
+\begin{frame}{Lemma 6: Full Mathematical Derivation (Detailed)}
+    \vspace{-0.25cm}
+    \textbf{Step 1.} Expand $D_\psi(w,w_i)$ and $D_\psi(w_i,w_{i-1})$ separately, then combine:
+    \begin{align}
+    D_\psi(w,w_i) &= D_\psi(w,w_{i-1}) - D_\psi(w_i,w_{i-1}) + \eta\nabla L_i(w_{i-1})^T(w-w_i)
+    \end{align}
+    
+    \vspace{0.08cm}
+    \textbf{Step 2.} For $w \in \mathcal{W}$, use $L_i(w) = 0$:
+    $$\eta\nabla L_i(w_{i-1})^T(w-w_{i-1}) = \eta L_i(w) - \eta L_i(w_{i-1}) - \eta D_{L_i}(w,w_{i-1})$$
+    (By definition of Bregman divergence for the loss.)
+    
+    \vspace{0.08cm}
+    \textbf{Step 3.} Rearrange using $(w-w_i) = (w-w_{i-1})-(w_i-w_{i-1})$:
+    $$\eta\nabla L_i(w_{i-1})^T(w-w_i) = -[L_i(w_{i-1})-L_i(w_i)-\nabla L_i(w_{i-1})^T(w_i-w_{i-1})] - \eta D_{L_i}(w,w_{i-1})$$
+    $$= -D_{\psi-\eta L_i}(w_i,w_{i-1}) - \eta L_i(w_i) - \eta D_{L_i}(w,w_{i-1})$$
+    
+    \vspace{0.08cm}
+    After rearrangement: the identity follows.
+\end{frame}
+
+\begin{frame}{Proof of Theorem 3: Containment and Convergence}
+    \vspace{-0.25cm}
+    \textbf{Part 1. Containment in $\mathcal{B}$:} From Lemma 6 (Fundamental Identity):
+    $$D_\psi(w, w_{i-1}) = D_\psi(w, w_i) + D_{\psi - \eta L_i}(w_i, w_{i-1}) + \eta L_i(w_i) + \eta D_{L_i}(w, w_{i-1})$$
+    
+    For $w \in \mathcal{W}$: all RHS terms are non-negative (by strict convexity of $\psi - \eta L_i$, sign of loss, star-convexity assumption). Thus $D_\psi(w, w_i) \leq D_\psi(w, w_{i-1}) \leq \cdots \leq D_\psi(w, w_0) \leq \epsilon$. Iterates stay in $\mathcal{B}$.
+    
+    \vspace{0.08cm}
+    \textbf{Part 2. Convergence:} Telescope Lemma 6 over $i=1,\ldots, T$. Boundary terms cancel:
+    $$D_\psi(w,w_0) = D_\psi(w,w_T) + \sum_{i=1}^T [\text{non-negative terms}]$$
+    
+    Since $D_\psi(w,w_T) \geq 0$ and LHS is fixed, the sum is bounded: $T \to \infty$ forces each term to 0. In particular, $D_{\psi-\eta L_i}(w_i,w_{i-1}) \to 0$, so $w_i \to w_\infty$ (convergence).
+    
+    \vspace{0.08cm}
+    \textbf{Part 3. Interpolation:} Loss terms $\eta L_i(w_i) \to 0$, so $L_i(w_\infty) = 0$ for all $i$. Thus $w_\infty \in \mathcal{W}$.
+\end{frame}
+
+\begin{frame}{Proof of Theorem 4: Closeness to Optimal Point}
+    \vspace{-0.25cm}
+    \textbf{Setup:} Apply Lemma 6 to both $w^*$ and $w_\infty$, both in $\mathcal{W}$. Telescope over all iterations:
+    $$D_\psi(w^*,w_0) = D_\psi(w^*,w_\infty) + \sum_{i=1}^\infty [\cdots]$$
+    $$D_\psi(w_\infty,w_0) = D_\psi(w_\infty,w_\infty) + \sum_{i=1}^\infty [\cdots] = \sum_{i=1}^\infty [\cdots]$$
+    
+    \vspace{0.08cm}
+    \textbf{Key observation:} The sums depend on $w^*$ and $w_\infty$ only through their distance from intermediate iterates $w_{i-1}$. By Assumption 2 (bounded Hessian), these distances are $O(\epsilon)$.
+    
+    \vspace{0.08cm}
+    \textbf{Conclusion:} Subtracting the two equations and using Hessian bounds via Taylor expansion:
+    $$D_\psi(w_\infty,w_0) - D_\psi(w^*,w_0) = -D_\psi(w^*,w_\infty) + o(\epsilon)$$
+    
+    Since both $D_\psi(w_\infty,w_0) - D_\psi(w^*,w_0) \geq 0$ (by definition of $w^*$) and $D_\psi(w^*,w_\infty) \geq 0$, each is $o(\epsilon)$.
+\end{frame}
+
+\begin{frame}{Highly Overparameterized Regime: Why $w_0$ Is Close to $\mathcal{W}$}
+    \vspace{-0.3cm}
+    In the limit $p \gg n$, a random initialization is whp close to the interpolating set.
+    
+    \begin{block}{Linear Approximation Argument}
+        \begin{itemize}
+            \item Distance to $\mathcal{W}$ is approximated by the solution to the linearized problem:
+            \begin{equation}
+                \min_w \|w - w_0\|^2 \quad \text{s.t.} \quad y \approx f(x, w_0) + \nabla f(x, w_0)^T(w - w_0)
+            \end{equation}
+            \item The Jacobian $\nabla f(x, w_0)$ is $n \times p$, consisting of sums of outer products
+        \end{itemize}
+    \end{block}
+    
     \begin{itemize}
-        \item \textbf{Significance:} If the step size is small enough to keep $D_{\psi - \eta L_i}$ positive, then $D_\psi(w, w_i)$ is non-increasing.
-        \item \textbf{Link to H-$\infty$ Control:} This identity relates SMD to minimax optimality and robust estimation theory developed in the 1990s.
-        \item \textbf{Consequence:} It provides a direct Lyapunov-like argument for convergence in Bregman space.
+        \item When $p \gg n$ and data are sufficiently random: $\lambda_{\min}(\nabla f^T \nabla f) = \Omega(p)$
+        \item Thus: $\|w^* - w_0\|^2 \approx \|y - f(x, w_0)\|^2 \cdot O(1/p) = O(n/p)$
+        \item Conclusion: $w_0$ is $O(\sqrt{n/p})$ away from the manifold—negligible as $p$ grows
     \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Section: Proof Technique
+% Section: Experiments
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The Fundamental Identity of SMD}
+\section{\textbf{\textcolor{purple}{Experimental Validation}}}
 
-\begin{frame}{Lemma 6: A General Identity for SMD}
-    The authors derive a fundamental identity that holds for any model $f(\cdot, \cdot)$ and differentiable loss $\ell(\cdot)$. For any $w \in \mathcal{W}$:
+\subsection{\textbf{\textcolor{purple}{Setup, Results, and Insights}}}
+\begin{frame}[plain]
+    \vfill
+    \centering
+    \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+        \usebeamerfont{title}Experimental Validation\par%
+        \color{oxfordblue}\noindent\rule{10cm}{1pt}
+    \end{beamercolorbox}
+    \vfill
+\end{frame}
+
+\begin{frame}{Experimental Setup}
+    \vspace{-0.2cm}
+    \textbf{Datasets:} MNIST (60K samples), CIFAR-10 (50K samples). Both highly overparameterized.
     
-    \begin{equation}
-        D_\psi(w, w_{i-1}) = D_\psi(w, w_i) + D_{\psi - \eta L_i}(w_i, w_{i-1}) + \eta L_i(w_i) + \eta D_{L_i}(w, w_{i-1})
-    \end{equation}
+    \vspace{0.08cm}
+    \textbf{Architectures:} MNIST: 4-layer CNN with 2M parameters. CIFAR-10: ResNet-18 with 11M parameters.
+    
+    \vspace{0.08cm}
+    \textbf{Protocol:} Random initialization $\mathcal{N}(0, 0.0001)$, train to $100\%$ accuracy.
+    
+    \vspace{0.08cm}
+    \textbf{Seeds:} 6 initializations (MNIST), 8 initializations (CIFAR-10).
+    
+    \vspace{0.08cm}
+    \textbf{Algorithms:} Mirror potentials $\psi(w) = \frac{1}{q}\|w\|_q^q$ for $q \in \{1+\epsilon, 2, 3, 10\}$.
+\end{frame}
+
+\begin{frame}{Experimental Hypothesis}
+    The paper predicts that \textbf{each SMD algorithm finds the interpolant closest to its initialization in the corresponding Bregman divergence}.
+    
+    \begin{block}{Testing Strategy}
+        For each initialization $w_0$ and each mirror type (with potential $\psi$):
+        \begin{enumerate}
+            \item Train the model to zero training error, reaching some $w_\infty \in \mathcal{W}$
+            \item Compute Bregman divergences $D_{\psi_q}(w_\infty^{(q)}, w_0)$ for all mirrors $q \in \{1+\epsilon, 2, 3, 10\}$
+            \item Check: Is the minimum always on the diagonal?
+        \end{enumerate}
+    \end{block}
     
     \begin{itemize}
-        \item \textbf{Significance:} If the step size is small enough to keep $D_{\psi - \eta L_i}$ positive, then $D_\psi(w, w_i)$ is non-increasing.
-        \item \textbf{Link to H-$\infty$ Control:} This identity relates SMD to minimax optimality and robust estimation theory developed in the 1990s.
-        \item \textbf{Consequence:} It provides a direct Lyapunov-like argument for convergence in Bregman space.
+        \item \textbf{Prediction:} For fixed $w_0$ and fixed $\psi_q$, the closest final point to $w_0$ (in $D_{\psi_q}$ distance) should be the one obtained by running SMD with $\psi_q$
+        \item This would confirm both convergence to $w^*$ and the theoretical characterization
     \end{itemize}
+\end{frame}
+
+\begin{frame}{MNIST Results: Convergence to Nearest Interpolant}
+    \vspace{-0.25cm}
+    \centering
+    \includegraphics[width=0.95\textwidth]{images/L1vsL10.png}
+    
+    \vspace{-0.15cm}
+    {\small Diagonal dominance: Each mirror finds its closest interpolant. Confirms Theorem 4.}
+\end{frame}
+
+\begin{frame}{CIFAR-10 Results: Consistency at Scale}
+    \vspace{-0.25cm}
+    \centering
+    \includegraphics[width=0.95\textwidth]{images/L1vsL10.png}
+    
+    \vspace{-0.15cm}
+    {\small Diagonal pattern holds at scale: ResNet-18, 11M parameters, 8 seeds. Compatible with theory.}
+\end{frame}
+
+\begin{frame}{Mirror Effects on Final Weight Distributions}
+    \vspace{-0.25cm}
+    \centering
+    \includegraphics[width=0.9\textwidth]{../Demo/figure_weight_distributions.png}
+    
+    \vspace{-0.15cm}
+    {\small \textbf{Geometric Signature:} $\ell_1$ induces sparsity, $\ell_{10}$ creates density. Mirror choice determines weight magnitude distribution.}
+\end{frame}
+
+\begin{frame}{Generalization Performance Across Mirrors}
+    \vspace{-0.2cm}
+    \textbf{MNIST:} All mirrors converge to $\geq 99\%$ test accuracy. Implicit bias does not hurt MNIST generalization.
+    
+    \vspace{0.15cm}
+    \textbf{CIFAR-10:} Mirror choice significantly impacts test error:
+    \begin{itemize}
+        \item $\ell_{10}$-SMD: Best generalization (densest weights, fewest constraints)
+        \item $\ell_2$ (SGD): Intermediate performance
+        \item $\ell_3$-SMD: Slightly worse than $\ell_2$
+        \item $\ell_1$-SMD: Worst (extreme sparsity overly regularizes)
+    \end{itemize}
+    
+    \vspace{0.15cm}
+    \textbf{Insight:} Implicit bias controls generalization. Denser regularization regimes generalize better on complex tasks. Optimizer is a design lever for test performance.
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Section: Conclusion
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Summary of Contributions}
+\section{\textbf{\textcolor{purple}{Closing: Summary and Future Work}}}
 
-\begin{frame}{Core Contributions and Impact}
-    \begin{itemize}
-        \item \textbf{Formalization of Implicit Bias:} Provides an exact (linear) and approximate (nonlinear) characterization of the solutions found by Mirror Descent.
-        \item \textbf{Extension to Nonlinearity:} Uses local regularity assumptions (RSC, Star-convexity) to bridge the gap between linear theory and deep learning.
-        \item \textbf{Optimizer as Regularizer:} Demonstrates that the choice of mirror map $\psi$ determines the inductive bias (e.g., $L_1$ vs. $L_\infty$), impacting generalization on datasets like CIFAR-10.
-        \item \textbf{Algorithmic Framework:} Establishes a unified perspective on SGD, Exponentiated Gradient, and $p$-norm algorithms as interpolating solvers with specific geometric properties.
-    \end{itemize}
+\subsection{\textbf{\textcolor{purple}{Key Takeaways}}}
+\begin{frame}[plain]
+    \vfill
+    \centering
+    \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+        \usebeamerfont{title}Summary of Contributions\par%
+        \color{oxfordblue}\noindent\rule{10cm}{1pt}
+    \end{beamercolorbox}
+    \vfill
 \end{frame}
+
+\begin{frame}{Summary}
+    \vspace{-0.2cm}
+    \begin{itemize}
+        \item \textbf{Implicit Bias}: Exact characterization in linear case, approximate in nonlinear
+        \item \textbf{Star-Convexity}: Local regularity connects linear theory to deep learning
+        \item \textbf{Optimizer as Regularizer}: Choice of $\psi$ determines bias and generalization
+        \item \textbf{Unified View}: SGD, exponentiated gradient, p-norm algorithms all fit framework
+    \end{itemize}
+    
+    \vspace{0.2cm}
+    Generalization is the geometric footprint of the optimizer.
+\end{frame}
+\subsection{\textbf{\textcolor{purple}{Open Questions and Future Directions}}}
+
+\begin{frame}{Future Work}
+    \vspace{-0.2cm}
+    \begin{enumerate}
+        \item Adaptive optimizers: What is effective $\psi$ for Adam or RMSProp?
+        \vspace{0.2cm}
+        
+        \item Transformer architectures: Does analysis extend to non-Euclidean geometry?
+        \vspace{0.2cm}
+        
+        \item Tighter bounds: Can $o(\epsilon)$ be exact for specific architectures?
+        \vspace{0.2cm}
+        
+        \item Learning $\psi$: Adapt mirror map during training?
+    \end{enumerate}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Section: Question and Answers
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\textbf{\textcolor{purple}{Question and Answers}}}
+\begin{frame}[plain]
+    \vfill
+    \centering
+    \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+        \usebeamerfont{title}\insertsectionhead\par%
+        \color{oxfordblue}\noindent\rule{10cm}{1pt}
+    \end{beamercolorbox}
+    \vfill
+\end{frame}
+
 
 \end{document}

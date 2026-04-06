@@ -1,9 +1,15 @@
-\beamer@sectionintoc {2}{\textbf {\textcolor {purple}{Introduction}}}{2}{0}{1}
-\beamer@sectionintoc {3}{\textbf {\textcolor {purple}{Problem Setup and Notation}}}{5}{0}{2}
-\beamer@sectionintoc {4}{\textbf {\textcolor {purple}{Stochastic Mirror Descent (SMD)}}}{8}{0}{3}
-\beamer@sectionintoc {5}{\textbf {\textcolor {purple}{Implicit Bias: The Linear Case}}}{11}{0}{4}
-\beamer@sectionintoc {6}{Assumptions for Nonlinear Analysis}{12}{0}{5}
-\beamer@sectionintoc {7}{Main Theoretical Results}{14}{0}{6}
-\beamer@sectionintoc {8}{The Fundamental Identity of SMD}{16}{0}{7}
-\beamer@sectionintoc {9}{The Fundamental Identity of SMD}{17}{0}{8}
-\beamer@sectionintoc {10}{Summary of Contributions}{18}{0}{9}
+\beamer@sectionintoc {2}{\textbf {\textcolor {purple}{Introduction}}}{3}{0}{1}
+\beamer@sectionintoc {3}{\textbf {\textcolor {purple}{Problem Setup and Notation}}}{9}{0}{2}
+\beamer@sectionintoc {4}{\textbf {\textcolor {purple}{Stochastic Mirror Descent (SMD)}}}{12}{0}{3}
+\beamer@sectionintoc {5}{\textbf {\textcolor {purple}{Implicit Bias: The Linear Case}}}{15}{0}{4}
+\beamer@sectionintoc {6}{\textbf {\textcolor {purple}{Nonlinear Analysis: Assumptions and Main Results}}}{16}{0}{5}
+\beamer@subsectionintoc {6}{1}{\textbf {\textcolor {purple}{Key Assumptions}}}{16}{0}{5}
+\beamer@subsectionintoc {6}{2}{\textbf {\textcolor {purple}{Main Convergence and Characterization Results}}}{19}{0}{5}
+\beamer@sectionintoc {7}{\textbf {\textcolor {purple}{Proofs: Bregman Distance Analysis}}}{22}{0}{6}
+\beamer@subsectionintoc {7}{1}{\textbf {\textcolor {purple}{Fundamental Identity and Proof Technique}}}{22}{0}{6}
+\beamer@sectionintoc {8}{\textbf {\textcolor {purple}{Experimental Validation}}}{29}{0}{7}
+\beamer@subsectionintoc {8}{1}{\textbf {\textcolor {purple}{Setup, Results, and Insights}}}{29}{0}{7}
+\beamer@sectionintoc {9}{\textbf {\textcolor {purple}{Closing: Summary and Future Work}}}{36}{0}{8}
+\beamer@subsectionintoc {9}{1}{\textbf {\textcolor {purple}{Key Takeaways}}}{36}{0}{8}
+\beamer@subsectionintoc {9}{2}{\textbf {\textcolor {purple}{Open Questions and Future Directions}}}{38}{0}{8}
+\beamer@sectionintoc {10}{\textbf {\textcolor {purple}{Question and Answers}}}{39}{0}{9}

@@ -1,0 +1,5 @@
+\frametitle{\textcolor {cmindsblue}{\textbf {Presentation Outline}}}
+\vspace{-0.2cm}
+    {\tiny
+    \tableofcontents[hideallsubsections, subsubsectionstyle=hide]
+    }
