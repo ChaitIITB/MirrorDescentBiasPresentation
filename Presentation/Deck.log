@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.9.5)  6 APR 2026 17:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.9.5)  6 APR 2026 17:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1721,26 +1721,13 @@ File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
 Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 620.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+<images/L1vsL10.png, id=277, 871.00406pt x 483.30562pt>
+File: images/L1vsL10.png Graphic file (type png)
+<use images/L1vsL10.png>
+Package pdftex.def Info: images/L1vsL10.png  used on input line 620.
+(pdftex.def)             Requested size: 378.42044pt x 209.97813pt.
 
-
-LaTeX Warning: File `../Demo/figure_mnist_distances.png' not found on input lin
-e 620.
-
-
-! Package pdftex.def Error: File `../Demo/figure_mnist_distances.png' not found
-: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.620 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \vbox (183.4283pt too high) detected at line 620
+Overfull \vbox (1.80438pt too high) detected at line 620
  []
 
 
@@ -1751,31 +1738,17 @@ Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 620.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 [32
 
-]
+ <./images/L1vsL10.png>]
 File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
 Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 629.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+File: images/L1vsL10.png Graphic file (type png)
+<use images/L1vsL10.png>
+Package pdftex.def Info: images/L1vsL10.png  used on input line 629.
+(pdftex.def)             Requested size: 378.42044pt x 209.97813pt.
 
-
-LaTeX Warning: File `../Demo/figure_cifar_distances.png' not found on input lin
-e 629.
-
-
-! Package pdftex.def Error: File `../Demo/figure_cifar_distances.png' not found
-: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.629 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \vbox (185.55746pt too high) detected at line 629
+Overfull \vbox (15.40439pt too high) detected at line 629
  []
 
 
@@ -1791,26 +1764,13 @@ File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
 Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 638.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
+<images/sparsitycomp.png, id=289, 908.64468pt x 563.10374pt>
+File: images/sparsitycomp.png Graphic file (type png)
+<use images/sparsitycomp.png>
+Package pdftex.def Info: images/sparsitycomp.png  used on input line 638.
+(pdftex.def)             Requested size: 366.47076pt x 227.11061pt.
 
-
-LaTeX Warning: File `../Demo/figure_weight_distributions.png' not found on inpu
-t line 638.
-
-
-! Package pdftex.def Error: File `../Demo/figure_weight_distributions.png' not 
-found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.638 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \vbox (164.02702pt too high) detected at line 638
+Overfull \vbox (32.53687pt too high) detected at line 638
  []
 
 
@@ -1821,7 +1781,7 @@ Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 638.
 (pdftex.def)             Requested size: 45.52718pt x 15.62335pt.
 [34
 
-]
+ <./images/sparsitycomp.png>]
 File: Theme/Logos/footerlogo.png Graphic file (type png)
 <use Theme/Logos/footerlogo.png>
 Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 655.
@@ -1893,19 +1853,15 @@ Package pdftex.def Info: Theme/Logos/footerlogo.png  used on input line 715.
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-08-13>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `Deck.out' has not changed.
 (rerunfilecheck)             Checksum: 2E10310583172B5C08C5393E4B1BC8E2;3113.
  ) 
 Here is how much of TeX's memory you used:
- 33251 strings out of 468133
- 659769 string characters out of 5430713
+ 33115 strings out of 468133
+ 654763 string characters out of 5430713
  1192907 words of memory out of 5000000
- 61132 multiletter control sequences out of 15000+600000
- 639511 words of font info for 89 fonts, out of 8000000 for 9000
+ 60997 multiletter control sequences out of 15000+600000
+ 639343 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,16n,123p,407b,934s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/chait/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
@@ -1929,13 +1885,12 @@ rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/chait/AppData/Loc
 al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/chait/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/
 chait/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><
-C:/Users/chait/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmt
-t10.pfb><C:/Users/chait/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/symbols/msam10.pfb><C:/Users/chait/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/symbols/msbm10.pfb>
-Output written on Deck.pdf (39 pages, 606772 bytes).
+C:/Users/chait/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbol
+s/msam10.pfb><C:/Users/chait/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/symbols/msbm10.pfb>
+Output written on Deck.pdf (39 pages, 829680 bytes).
 PDF statistics:
- 432 PDF objects out of 1000 (max. 8388607)
+ 431 PDF objects out of 1000 (max. 8388607)
  95 named destinations out of 1000 (max. 500000)
- 181 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 191 words of extra memory for PDF output out of 10000 (max. 10000000)
 
